@@ -10,6 +10,7 @@
    **SELECT** FirstName,EmailAddress,CompanyName
    **FROM** SalesLT.Customer
    **WHERE** SalesLT.Customer.CompanyName='Bike World'
+   
 2. **USE** AdventureWorksLT2012
    **SELECT** SalesLT.Customer.CompanyName
    **FROM** SalesLT.CustomerAddress
@@ -18,9 +19,11 @@
    **INNER JOIN** SalesLT.Address **ON**
    SalesLT.CustomerAddress.AddressID=SalesLT.Address.AddressID
    **WHERE** SalesLT.Address.City='Dallas'
+   
 3. **SELECT** COUNT(SalesLT.Product.ProductID)
    **FROM** SalesLT.Product
    **WHERE** SalesLT.Product.ListPrice > 1000
+   
 4. **USE** AdventureWorksLT2012
    **SELECT** SalesLT.Customer.CompanyName,
    **SUM**(SalesLT.SalesOrderHeader.SubTotal*SalesLT.SalesOrderHeader.TaxAmt*SalesLT.SalesOrderHeader.Freight) **AS** Orders
@@ -29,6 +32,7 @@
    SalesLT.SalesOrderHeader.CustomerID=SalesLT.Customer.CustomerID
    **GROUP BY** SalesLT.Customer.CompanyName
    **HAVING** **SUM**(SalesLT.SalesOrderHeader.SubTotal*SalesLT.SalesOrderHeader.TaxAmt*SalesLT.SalesOrderHeader.Freight) >100000
+   
 5. **USE** AdventureWorksLT2012
    **SELECT**
    **COUNT**(SalesLT.Product.ProductID)
