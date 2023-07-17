@@ -10,3 +10,10 @@
    **SELECT** FirstName,EmailAddress,CompanyName
    **FROM** SalesLT.Customer
    **WHERE** SalesLT.Customer.CompanyName='Bike World'
+2. **USE** AdventureWorksLT2012
+   **SELECT** SalesLT.Customer.CompanyName
+   **FROM** SalesLT.CustomerAddress
+   **INNER JOIN** SalesLT.Customer **ON**
+   SalesLT.CustomerAddress.CustomerID=SalesLT.Customer.CustomerID
+   **INNER JOIN** SalesLT.Address **ON**
+   SalesLT.CustomerAddress.AddressID=SalesLT.Address.AddressID
