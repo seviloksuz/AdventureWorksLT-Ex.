@@ -29,3 +29,16 @@
    SalesLT.SalesOrderHeader.CustomerID=SalesLT.Customer.CustomerID
    **GROUP BY** SalesLT.Customer.CompanyName
    **HAVING** **SUM**(SalesLT.SalesOrderHeader.SubTotal*SalesLT.SalesOrderHeader.TaxAmt*SalesLT.SalesOrderHeader.Freight) >100000
+5. **USE** AdventureWorksLT2012
+   **SELECT**
+   **COUNT**(SalesLT.Product.ProductID)
+   **FROM** SalesLT.Product
+   **INNER JOIN** SalesLT.SalesOrderDetail **ON**
+   SalesLT.Product.ProductID=SalesLT.SalesOrderDetail.ProductID
+   **INNER JOIN** SalesLT.SalesOrderHeader **ON**
+   SalesLT.SalesOrderDetail.SalesOrderID=SalesLT.SalesOrderHeader.SalesOrderID
+   **INNER JOIN** SalesLT.Customer **ON**
+   SalesLT.SalesOrderHeader.CustomerID=SalesLT.Customer.CustomerID
+   **WHERE** SalesLT.Product.Name='Racing Socks, L'
+   **GROUP BY** SalesLT.Customer.CompanyName 
+   **HAVING** SalesLT.Customer.CompanyName = 'Riding Cycles'   
